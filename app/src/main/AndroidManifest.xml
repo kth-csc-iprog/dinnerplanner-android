@@ -16,6 +16,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PageWelcome"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_page_welcome"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/FullscreenTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="se.kth.csc.iprog.dinnerplanner.android.MainActivity" />
+        </activity>
+        <activity
+            android:name=".PageFinal"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_page_final"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/FullscreenTheme" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="se.kth.csc.iprog.dinnerplanner.android.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
