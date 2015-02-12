@@ -14,6 +14,7 @@ public class AppTitle {
     public AppTitle(View view) {
 
         this.view = view;
+        TextView textView = (TextView) view.findViewById(R.id.title_header);
 
     }
 

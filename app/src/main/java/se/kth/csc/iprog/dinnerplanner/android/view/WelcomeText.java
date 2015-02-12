@@ -14,6 +14,7 @@ public class WelcomeText {
     public WelcomeText(View view) {
 
         this.view = view;
+        TextView textView = (TextView) view.findViewById(R.id.welcome_text);
 
     }
 
