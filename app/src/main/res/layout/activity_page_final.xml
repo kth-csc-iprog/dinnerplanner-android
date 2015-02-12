@@ -2,174 +2,192 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginTop="@dimen/activity_vertical_margin"
-    android:layout_marginBottom="@dimen/activity_vertical_margin"
-    android:layout_marginLeft="@dimen/activity_horizontal_margin"
-    android:layout_marginStart="@dimen/activity_horizontal_margin"
-    android:layout_marginEnd="@dimen/activity_horizontal_margin"
-    android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:keepScreenOn="true"
     android:id="@+id/page_final_view_id" >
 
-    <Button
-        android:id="@+id/back_button"
-        android:layout_width="wrap_content"
+    <TextView
+        android:id="@+id/title_header"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/activity_medium_text"
-        android:layout_gravity="start|top"
+        android:gravity="center"
         android:background="@color/red"
         android:textColor="@color/white"
-        android:text="Previous" />
-
-    <TextView
-        android:id="@+id/total_cost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|top"
         android:textSize="@dimen/activity_large_text"
-        android:text="@string/total_cost" />
+        android:textStyle="bold"
+        android:text="@string/app_name"/>
 
-
-    // Ingredients and courses images and headings
     <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="80dp">
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/activity_margin_from_header"
+        android:layout_marginBottom="@dimen/activity_vertical_margin"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginStart="@dimen/activity_horizontal_margin"
+        android:layout_marginEnd="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin" >
 
-        // Ingredients image and title
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="@dimen/activity_image_side"
+        <Button
+            android:id="@+id/back_button"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|left|center_vertical"
-            android:layout_marginTop="@dimen/activity_small_text">
-            <ImageButton
-                android:id="@+id/ingredients_image"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/activity_image_side"
-                android:contentDescription="Ingredients"
-                android:background="@color/red" />
-            <TextView
-                android:id="@+id/ingredients_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/activity_image_side"
-                android:gravity="center"
-                android:textSize="@dimen/activity_small_text"
-                android:text="Ingredients" />
-        </FrameLayout>
+            android:textSize="@dimen/activity_medium_text"
+            android:layout_gravity="start|top"
+            android:background="@color/red"
+            android:textColor="@color/white"
+            android:text="Back" />
 
-
-        // Instructions title and images
-        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="210dp"
+        <TextView
+            android:id="@+id/total_cost"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="top|end|center_vertical">
+            android:layout_gravity="end|top"
+            android:textSize="@dimen/activity_medium_text"
+            android:text="@string/total_cost" />
 
-            <TextView
-                android:id="@+id/instructions_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:gravity="center"
-                android:textSize="@dimen/activity_small_text"
-                android:textStyle="bold"
-                android:text="Instructions" />
 
+        // Ingredients and courses images and headings
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="50dp">
+
+            // Ingredients image and title
             <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="match_parent"
+                android:layout_width="@dimen/activity_image_side"
                 android:layout_height="wrap_content"
-                android:layout_gravity="end|center_vertical"
+                android:layout_gravity="top|left|center_vertical"
                 android:layout_marginTop="@dimen/activity_small_text">
-
                 <ImageButton
-                    android:id="@+id/starter_image"
-                    android:contentDescription="Starter"
-                    android:layout_width="@dimen/activity_image_side"
+                    android:id="@+id/ingredients_image"
+                    android:layout_width="match_parent"
                     android:layout_height="@dimen/activity_image_side"
-                    android:keepScreenOn="true"
-                    android:background="@color/red"
-                    android:layout_gravity="left"/>
+                    android:contentDescription="Ingredients"
+                    android:background="@color/red" />
                 <TextView
-                    android:id="@+id/starter_title"
+                    android:id="@+id/ingredients_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/activity_image_side"
-                    android:layout_gravity="left"
                     android:gravity="center"
                     android:textSize="@dimen/activity_small_text"
-                    android:text="Starter" />
+                    android:text="Ingredients" />
+            </FrameLayout>
 
-                <ImageButton
-                    android:id="@+id/main_course_image"
-                    android:contentDescription="Main course"
-                    android:layout_width="@dimen/activity_image_side"
-                    android:layout_height="@dimen/activity_image_side"
-                    android:background="@color/red"
-                    android:layout_gravity="center_horizontal"/>
+
+            // Instructions title and images
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end|center_vertical">
+
                 <TextView
-                    android:id="@+id/main_course_title"
+                    android:id="@+id/instructions_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/activity_image_side"
                     android:layout_gravity="center_horizontal"
                     android:gravity="center"
                     android:textSize="@dimen/activity_small_text"
-                    android:text="Main Course" />
+                    android:textStyle="bold"
+                    android:text="Instructions" />
 
-                <ImageButton
-                    android:id="@+id/dessert_image"
-                    android:contentDescription="Dessert"
-                    android:layout_width="@dimen/activity_image_side"
-                    android:layout_height="@dimen/activity_image_side"
-                    android:layout_gravity="right"
-                    android:background="@color/red" />
-                <TextView
-                    android:id="@+id/dessert_title"
-                    android:layout_width="wrap_content"
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="@dimen/activity_image_side"
-                    android:layout_gravity="right"
-                    android:gravity="center"
-                    android:textSize="@dimen/activity_small_text"
-                    android:text="Dessert" />
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginTop="@dimen/activity_small_text">
+
+                    <ImageButton
+                        android:id="@+id/starter_image"
+                        android:contentDescription="Starter"
+                        android:layout_width="@dimen/activity_image_side"
+                        android:layout_height="@dimen/activity_image_side"
+                        android:keepScreenOn="true"
+                        android:background="@color/red"
+                        android:layout_gravity="left"/>
+                    <TextView
+                        android:id="@+id/starter_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_image_side"
+                        android:layout_gravity="left"
+                        android:gravity="center"
+                        android:textSize="@dimen/activity_small_text"
+                        android:text="Starter" />
+
+                    <ImageButton
+                        android:id="@+id/main_course_image"
+                        android:contentDescription="Main course"
+                        android:layout_width="@dimen/activity_image_side"
+                        android:layout_height="@dimen/activity_image_side"
+                        android:background="@color/red"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:id="@+id/main_course_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_image_side"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:textSize="@dimen/activity_small_text"
+                        android:text="Main Course" />
+
+                    <ImageButton
+                        android:id="@+id/dessert_image"
+                        android:contentDescription="Dessert"
+                        android:layout_width="@dimen/activity_image_side"
+                        android:layout_height="@dimen/activity_image_side"
+                        android:layout_gravity="right"
+                        android:background="@color/red" />
+                    <TextView
+                        android:id="@+id/dessert_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_image_side"
+                        android:layout_gravity="right"
+                        android:gravity="center"
+                        android:textSize="@dimen/activity_small_text"
+                        android:text="Dessert" />
+                    </FrameLayout>
                 </FrameLayout>
-            </FrameLayout>
-    </FrameLayout>
+        </FrameLayout>
 
 
-    // Lower panel, with informative text of ingredients or instructions and number of guests (pers)
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="190dp">
+        // Lower panel, with informative text of ingredients or instructions and number of guests (pers)
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="155dp">
 
-        <TextView
-            android:id="@+id/pers"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:keepScreenOn="true"
-            android:layout_gravity="end|top"
-            android:textSize="@dimen/activity_medium_text"
-            android:text="4 pers" />
+            <TextView
+                android:id="@+id/pers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                android:layout_gravity="end|top"
+                android:textSize="@dimen/activity_medium_text"
+                android:text="4 pers" />
 
-        <TextView
-            android:id="@+id/information_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:keepScreenOn="true"
-            android:layout_gravity="start|top"
-            android:textSize="@dimen/activity_medium_text"
-            android:textStyle="bold"
-            android:text="Text" />
-        <TextView
-            android:id="@+id/information_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
-            android:keepScreenOn="true"
-            android:layout_gravity="start|top"
-            android:textSize="@dimen/activity_medium_text"
-            android:text="Text" />
+            <TextView
+                android:id="@+id/information_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                android:layout_gravity="start|top"
+                android:textSize="@dimen/activity_medium_text"
+                android:textStyle="bold"
+                android:text="Text" />
+            <TextView
+                android:id="@+id/information_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:keepScreenOn="true"
+                android:layout_gravity="start|top"
+                android:textSize="@dimen/activity_medium_text"
+                android:text="Text" />
+
+        </FrameLayout>
 
     </FrameLayout>
 

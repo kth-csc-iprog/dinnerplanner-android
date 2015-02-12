@@ -1,6 +1,7 @@
 package se.kth.csc.iprog.dinnerplanner.android;
 
 import se.kth.csc.iprog.dinnerplanner.android.util.SystemUiHider;
+import se.kth.csc.iprog.dinnerplanner.android.view.AppTitle;
 import se.kth.csc.iprog.dinnerplanner.android.view.WelcomeButton;
 import se.kth.csc.iprog.dinnerplanner.android.view.WelcomeText;
 
@@ -23,6 +24,7 @@ public class PageWelcome extends Activity {
         setContentView(R.layout.activity_page_welcome);
 
         // Instantiate views
+        AppTitle appTitle = new AppTitle(findViewById(R.id.page_final_view_id));
         WelcomeText welcomeText = new WelcomeText(findViewById(R.id.page_welcome_view_id));
         WelcomeButton welcomeButton = new WelcomeButton(findViewById(R.id.page_welcome_view_id));
 
