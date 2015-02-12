@@ -14,6 +14,8 @@ public class FinalInformationText {
     public FinalInformationText(View view) {
 
         this.view = view;
+        TextView text = (TextView) view.findViewById(R.id.information_text);
+        TextView title = (TextView) view.findViewById(R.id.information_title);
 
     }
 

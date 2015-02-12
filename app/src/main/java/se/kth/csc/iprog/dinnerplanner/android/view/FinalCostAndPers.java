@@ -14,6 +14,8 @@ public class FinalCostAndPers {
     public FinalCostAndPers(View view) {
 
         this.view = view;
+        TextView totalCost = (TextView) view.findViewById(R.id.total_cost);
+        TextView pers = (TextView) view.findViewById(R.id.pers);
 
     }
 
