@@ -36,7 +36,10 @@ public class Dish {
 		this.type = type;
 	}
 	public String getImage() {
-		return image;
+        // Remove extension ".jpg"
+        int imageLength = image.length() - 4;
+        String imageNoExtension = image.substring(0, imageLength);
+		return imageNoExtension;
 	}
 	public void setImage(String image) {
 		this.image = image;
