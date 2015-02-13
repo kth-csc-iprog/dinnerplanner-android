@@ -17,9 +17,17 @@ public class DinnerPlannerApplication extends Application {
 		this.model = model;
 	}
 
+<<<<<<< HEAD
     public static int getImageResId(Context context, String name)
     {
         return context.getResources().getIdentifier(name,"drawable", context.getPackageName());
     }
+=======
+    public static int getDrawable(Context context, String name)
+    {
+        return context.getResources().getIdentifier(name,"drawable", context.getPackageName());
+    }
+
+>>>>>>> master
 
 }
