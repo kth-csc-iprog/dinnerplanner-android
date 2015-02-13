@@ -32,7 +32,7 @@ public class FinalInformationText {
         }
         StringBuilder str = new StringBuilder();
         for (Ingredient ingredient : model.getAllIngredients()) {
-            str.append(ingredient.getName() + "\t" + ingredient.getQuantity() + ingredient.getUnit() + "\n");
+            str.append(ingredient.getName() + "\t" + ingredient.getQuantity() + " " + ingredient.getUnit() + "\n");
         }
         text.setText(str.toString());
         title.setText("Ingredients");
