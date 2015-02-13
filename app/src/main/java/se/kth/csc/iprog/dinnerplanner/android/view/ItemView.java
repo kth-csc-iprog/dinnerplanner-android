@@ -25,12 +25,16 @@ public class ItemView extends LinearLayout {
         this.d = dish;
 
         //Set item text
-        TextView dishName = (TextView) this.findViewById(R.id.itemName);
-        dishName.setText(String.valueOf(this.d.getName()));
+        TextView text = new TextView(context);
+        text.setText(this.d.getName());
+
+
+        //TextView dishName = (TextView) this.findViewById(R.id.itemName);
+        //dishName.setText(String.valueOf(this.d.getName()));
 
         //Set item image
-        ImageView dishImage = (ImageView) this.findViewById(R.id.itemImage);
-        dishImage.setImageResource(DinnerPlannerApplication.getImageResId(context, this.d.getImage()));
+        //ImageView dishImage = (ImageView) this.findViewById(R.id.itemImage);
+        //dishImage.setImageResource(DinnerPlannerApplication.getImageResId(context, this.d.getImage()));
 
     }
 }
