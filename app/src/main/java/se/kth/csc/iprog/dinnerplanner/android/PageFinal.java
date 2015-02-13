@@ -1,7 +1,6 @@
 package se.kth.csc.iprog.dinnerplanner.android;
 
 import se.kth.csc.iprog.dinnerplanner.android.util.SystemUiHider;
-import se.kth.csc.iprog.dinnerplanner.android.view.AppTitle;
 import se.kth.csc.iprog.dinnerplanner.android.view.FinalBack;
 import se.kth.csc.iprog.dinnerplanner.android.view.FinalCostAndPers;
 import se.kth.csc.iprog.dinnerplanner.android.view.FinalFoodImages;
@@ -26,7 +25,6 @@ public class PageFinal extends Activity {
         setContentView(R.layout.activity_page_final);
 
         // Instantiate views
-        AppTitle appTitle = new AppTitle(findViewById(R.id.page_final_view_id));
         FinalCostAndPers finalCostAndPers = new FinalCostAndPers(findViewById(R.id.page_final_view_id));
         FinalFoodImages finalFoodImages = new FinalFoodImages(findViewById(R.id.page_final_view_id));
         FinalInformationText finalInformationText = new FinalInformationText(findViewById(R.id.page_final_view_id));
