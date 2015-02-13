@@ -4,6 +4,11 @@
     <string name="app_name">Dinner Planner</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_activity2__menu">Activity2_Menu</string>
+    <string name="title_activity_dish_popup">dish_popup</string>
+    <string name="title_activity_item_view">ItemView</string>
+    <string name="title_activity_menu_view">MenuView</string>
+
     <string name="title_activity_page_welcome">PageWelcome</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
@@ -13,5 +18,6 @@
     <string name="total_cost">Total cost: 0 kr</string>
     <string name="ingredients">Ingredients</string>
     <string name="instructions">Instructions</string>
+
 
 </resources>
