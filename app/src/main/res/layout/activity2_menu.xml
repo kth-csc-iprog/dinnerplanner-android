@@ -108,7 +108,81 @@
                 android:layout_height="fill_parent"
                 android:id="@+id/Starter"
                 >
-                </LinearLayout>
+
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left|center_vertical"
+                    android:layout_marginTop="12sp">
+                //Baked Brie
+                <ImageButton
+                    android:id="@+id/imgStarter1"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="60dp"
+                    android:contentDescription="Ingredients"
+                    />
+                <TextView
+                    android:id="@+id/txtStarter1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_image_side"
+                    android:layout_gravity="left"
+                    android:textSize="12sp"
+                    android:text="Baked Brie" />
+                </FrameLayout>
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    />
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left|center_vertical"
+                    android:layout_marginTop="12sp">
+                <ImageButton
+                    android:id="@+id/imgStarter2"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="60sp"
+                    android:contentDescription=""
+                    android:layout_gravity="center_horizontal"/>
+                <TextView
+                    android:id="@+id/txtStarter2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_image_side"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="12sp"
+                    android:text="Sourdough"
+                    />
+                </FrameLayout>
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="match_parent"
+                    />
+
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left|center_vertical"
+                    android:layout_marginTop="12sp">
+                <ImageButton
+                    android:id="@+id/imgStarter3"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="60sp"
+                    android:contentDescription=""
+                    android:gravity="left"/>
+                <TextView
+                    android:id="@+id/txtStarter3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_image_side"
+                    android:gravity="left"
+                    android:textSize="12sp"
+                    android:text="Toast" />
+                </FrameLayout>
+
+            </LinearLayout>
         </HorizontalScrollView>
 
         <TextView
@@ -132,8 +206,30 @@
                 android:layout_height="fill_parent"
                 android:id="@+id/MainCourse"
                 >
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left|center_vertical"
+                    android:layout_marginTop="12sp">
+            <ImageButton
+                android:id="@+id/imgMain1"
+                android:layout_width="@dimen/activity_image_side"
+                android:layout_height="60sp"
+                android:contentDescription=""/>
+            <TextView
+                android:id="@+id/txtMain2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_image_side"
+                android:gravity="left"
+                android:textSize="12sp"
+                android:text="Meatballs" />
+                </FrameLayout>
             </LinearLayout>
         </HorizontalScrollView>
+
+
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -156,6 +252,25 @@
                 android:layout_height="fill_parent"
                 android:id="@+id/Dessert"
                 >
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="top|left|center_vertical"
+                    android:layout_marginTop="12sp">
+                <ImageButton
+                    android:id="@+id/imgDessert1"
+                    android:layout_width="@dimen/activity_image_side"
+                    android:layout_height="60sp"
+                    android:contentDescription=""/>
+                <TextView
+                    android:id="@+id/txtDessert1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/activity_image_side"
+                    android:gravity="left"
+                    android:textSize="12sp"
+                    android:text="Ice Cream" />
+                </FrameLayout>
             </LinearLayout>
         </HorizontalScrollView>
 

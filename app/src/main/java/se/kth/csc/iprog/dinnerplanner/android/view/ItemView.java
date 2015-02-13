@@ -23,7 +23,6 @@ public class ItemView extends LinearLayout {
         super(context);
 
         this.d = dish;
-
         //Set item text
         TextView text = new TextView(context);
         text.setText(this.d.getName());

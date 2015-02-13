@@ -3,6 +3,7 @@ package se.kth.csc.iprog.dinnerplanner.android.view;
 import android.content.Context;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.app.Activity;
 import android.os.Bundle;
@@ -47,12 +48,38 @@ public class MenuView {
         TextView price = (TextView) view.findViewById(R.id.txtPrice);
         price.setText(String.valueOf(model.getTotalMenuPrice()));
 
-        // Add dishes to Starter/ Main/ Dessert list accordingly
-        Starter = (LinearLayout) view.findViewById(R.id.Starter);
-        MainCourse = (LinearLayout) view.findViewById(R.id.MainCourse);
-        Dessert = (LinearLayout) view.findViewById(R.id.Dessert);
+        //load pictures
+        //bakedbrie
+        ImageButton d1 = (ImageButton) view.findViewById(R.id.imgStarter1);
+        int ResId = DinnerPlannerApplication.getDrawable(view.getContext(), "bakedbrie");
+        d1.setImageResource(ResId);
 
-        Set<Dish> allDishes = model.getDishes();
+        //sourdough
+        ImageButton d2 = (ImageButton) view.findViewById(R.id.imgStarter2);
+        int ResId2 = DinnerPlannerApplication.getDrawable(view.getContext(), "sourdough");
+        d2.setImageResource(ResId2);
+
+        //toast
+        ImageButton d3 = (ImageButton) view.findViewById(R.id.imgStarter3);
+        int ResId3 = DinnerPlannerApplication.getDrawable(view.getContext(), "toast");
+        d3.setImageResource(ResId3);
+
+        //Meatballs
+        ImageButton d4 = (ImageButton) view.findViewById(R.id.imgMain1);
+        int ResId4 = DinnerPlannerApplication.getDrawable(view.getContext(), "meatballs");
+        d4.setImageResource(ResId4);
+
+        //Ice Cream
+        ImageButton d5 = (ImageButton) view.findViewById(R.id.imgDessert1);
+        int ResId5 = DinnerPlannerApplication.getDrawable(view.getContext(), "icecream");
+        d5.setImageResource(ResId5);
+
+        // Add dishes to Starter/ Main/ Dessert list accordingly
+        //Starter = (LinearLayout) view.findViewById(R.id.Starter);
+        //MainCourse = (LinearLayout) view.findViewById(R.id.MainCourse);
+        //Dessert = (LinearLayout) view.findViewById(R.id.Dessert);
+
+  /*      Set<Dish> allDishes = model.getDishes();
         for (Dish d : allDishes) {
             if (d.getType() == Dish.STARTER)
             {
@@ -72,7 +99,7 @@ public class MenuView {
 
 
 
-        }
+        }*/
     }
 
 
