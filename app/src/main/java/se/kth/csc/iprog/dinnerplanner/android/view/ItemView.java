@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.Observable;
+
 import se.kth.csc.iprog.dinnerplanner.android.DinnerPlannerApplication;
 import se.kth.csc.iprog.dinnerplanner.android.R;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
@@ -34,6 +36,10 @@ public class ItemView extends LinearLayout {
         //Set item image
         //ImageView dishImage = (ImageView) this.findViewById(R.id.itemImage);
         //dishImage.setImageResource(DinnerPlannerApplication.getImageResId(context, this.d.getImage()));
+
+    }
+
+    public void update(Observable o, Object changedItem) {
 
     }
 }

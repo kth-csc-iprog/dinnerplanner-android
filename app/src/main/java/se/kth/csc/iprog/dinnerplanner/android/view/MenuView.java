@@ -15,6 +15,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Set;
 
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
@@ -23,10 +25,15 @@ import se.kth.csc.iprog.dinnerplanner.android.R;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 import se.kth.csc.iprog.dinnerplanner.model.Dish;
 
-public class MenuView {
+public class MenuView implements Observer {
 
     View view = null;
     DinnerModel model = null;
+
+    //total price field
+    TextView price = (TextView) view.findViewById(R.id.txtPrice);
+    //guest field
+    EditText guests = (EditText) view.findViewById(R.id.txtNumberOfGuests);
 
     LinearLayout Starter;
     LinearLayout MainCourse;
@@ -40,16 +47,17 @@ public class MenuView {
         this.model = model;
         context = this.view.getContext();
 
+        //register view to model as observer
+        model.addObserver(this);
+
         //set default guest number
-        EditText guests = (EditText) view.findViewById(R.id.txtNumberOfGuests);
         guests.setText(String.valueOf(model.getNumberOfGuests()));
 
         //set total price field
-        TextView price = (TextView) view.findViewById(R.id.txtPrice);
-        price.setText(String.valueOf(model.getTotalMenuPrice()));
+        updateCost();
 
         //load pictures
-        //bakedbrie
+        //baked brie
         ImageButton d1 = (ImageButton) view.findViewById(R.id.imgStarter1);
         int ResId = DinnerPlannerApplication.getDrawable(view.getContext(), "bakedbrie");
         d1.setImageResource(ResId);
@@ -101,6 +109,49 @@ public class MenuView {
 
         }*/
     }
+    public void update(Observable o, Object updatedItem) {
+
+            DinnerModel model = (DinnerModel) o;
+            //check if dish changed
+            if (updatedItem instanceof Dish)
+            {
+                Dish changedDish = (Dish) updatedItem;
+                //change dish in model
+                model.selectDish(changedDish);
+            }
+            //check if guests changed
+            else if(updatedItem instanceof TextView)
+            {
+                //change guests in model
+                model.setNumberOfGuests(Integer.parseInt(guests.getText().toString()));
+            }
+
+       /*         if(changedList != null){
+                    //Unhightlight all dishes
+                    //Highlight selected dishes
+                    for (int i = 0; i < changedList.getChildCount(); i++) {
+                        DishItemView eachDishView = (DishItemView) changedList.getChildAt(i);
+                        if(eachDishView.dish != selectedDish){
+                            eachDishView.setHighlight(false);
+                        }
+                    }
+                }*/
+
+            
+        //update price
+        this.updateCost();
+    }
+    //TODO: update cost
+
+public void updateCost() {
+    price.setText(String.valueOf(model.getTotalMenuPrice()));
+}
+
+    //TODO: display popup
+    //TODO: Highlighting items
+    //TODO: Make Controllers
+
+
 
 
 }

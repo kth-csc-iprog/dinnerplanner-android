@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.Observable;
+
 import se.kth.csc.iprog.dinnerplanner.android.R;
 
 public class DishPopupView extends Activity {
