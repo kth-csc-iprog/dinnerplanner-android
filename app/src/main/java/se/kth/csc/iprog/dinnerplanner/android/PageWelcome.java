@@ -1,18 +1,11 @@
 package se.kth.csc.iprog.dinnerplanner.android;
 
-import se.kth.csc.iprog.dinnerplanner.android.util.SystemUiHider;
-import se.kth.csc.iprog.dinnerplanner.android.view.WelcomeButton;
-import se.kth.csc.iprog.dinnerplanner.android.view.WelcomeText;
+import se.kth.csc.iprog.dinnerplanner.android.view.Welcome;
 
-import android.annotation.TargetApi;
 import android.app.Activity;
-import android.os.Build;
+import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
 
 
 public class PageWelcome extends Activity {
@@ -23,9 +16,13 @@ public class PageWelcome extends Activity {
         setContentView(R.layout.activity_page_welcome);
 
         // Instantiate views
-        WelcomeText welcomeText = new WelcomeText(findViewById(R.id.page_welcome_view_id));
-        WelcomeButton welcomeButton = new WelcomeButton(findViewById(R.id.page_welcome_view_id));
+        Welcome welcome = new Welcome(findViewById(R.id.page_welcome_view_id));
 
     }
 
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, Activity2_MenuView.class);
+        startActivity(intent);
+        finish();
+    }
 }

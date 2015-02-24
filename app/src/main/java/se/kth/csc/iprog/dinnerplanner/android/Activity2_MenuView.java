@@ -1,6 +1,7 @@
 package se.kth.csc.iprog.dinnerplanner.android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -12,8 +13,11 @@ import android.widget.TextView;
 
 import se.kth.csc.iprog.dinnerplanner.android.view.MenuView;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
+import se.kth.csc.iprog.dinnerplanner.model.Dish;
 
 public class Activity2_MenuView extends Activity {
+
+    DinnerModel model;
 
     public Activity2_MenuView(){
 
@@ -25,7 +29,7 @@ public class Activity2_MenuView extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity2_menu);
-        DinnerModel model = ((DinnerPlannerApplication) this.getApplication()).getModel();
+        model = ((DinnerPlannerApplication) this.getApplication()).getModel();
         mainView = new MenuView(findViewById(R.id.activity2_menu_id), model);
     }
 
@@ -50,4 +54,14 @@ public class Activity2_MenuView extends Activity {
 
         return super.onOptionsItemSelected(item);
     }
+
+    public void sendMessage(View view) {
+        if ((model.getNumberOfGuests() > 0) && !model.getFullMenu().isEmpty()) {
+            Intent intent = new Intent(this, PageFinal.class);
+            startActivity(intent);
+            finish();
+        }
+
+    }
+
 }
