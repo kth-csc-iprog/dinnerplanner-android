@@ -1,0 +1,240 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginStart="@dimen/activity_horizontal_margin"
+    android:layout_marginEnd="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:keepScreenOn="true"
+    android:id="@+id/page_final_view_id" >
+
+    <Button
+        android:id="@+id/back_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/activity_medium_text"
+        android:layout_gravity="start|top"
+        android:gravity="center"
+        android:background="@color/red"
+        android:textColor="@color/white"
+        android:onClick="sendMessage"
+        android:text="Back" />
+
+    <TextView
+        android:id="@+id/total_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|top"
+        android:textSize="@dimen/activity_medium_text"
+        android:text="@string/total_cost" />
+
+
+    // Ingredients and courses images and headings
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp">
+
+        // Ingredients image and title
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="@dimen/activity_image_border_side"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|left|center_vertical"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/activity_small_text">
+            <ImageView
+                android:id="@+id/ingredients_image_border"
+                android:layout_width="@dimen/activity_image_border_side"
+                android:layout_height="@dimen/activity_image_border_side"
+                android:background="@color/red"
+                android:visibility="invisible"
+                android:layout_gravity="center_horizontal"/>
+            <ImageButton
+                android:id="@+id/ingredients_image"
+                android:layout_width="@dimen/activity_image_side"
+                android:layout_height="@dimen/activity_image_side"
+                android:layout_marginTop="@dimen/activity_image_border_width"
+                android:layout_marginStart="@dimen/activity_image_border_width"
+                android:layout_marginLeft="@dimen/activity_image_border_width"
+                android:contentDescription="Ingredients"
+                android:background="@color/red" />
+            <TextView
+                android:id="@+id/ingredients_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_image_border_side"
+                android:gravity="center"
+                android:textSize="@dimen/activity_small_text"
+                android:text="@string/ingredients" />
+        </FrameLayout>
+
+
+        // Instructions title and images
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top|end|center_vertical"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin">
+
+            <TextView
+                android:id="@+id/instructions_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:textSize="@dimen/activity_small_text"
+                android:textStyle="bold"
+                android:text="@string/instructions" />
+
+            <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginTop="@dimen/activity_small_text">
+
+                <ImageView
+                    android:id="@+id/starter_image_border"
+                    android:layout_width="@dimen/activity_image_border_side"
+                    android:layout_height="@dimen/activity_image_border_side"
+                    android:background="@color/red"
+                    android:visibility="invisible"
+                    android:layout_gravity="start"/>
+                <ImageView
+                    android:id="@+id/main_course_image_border"
+                    android:layout_width="@dimen/activity_image_border_side"
+                    android:layout_height="@dimen/activity_image_border_side"
+                    android:background="@color/red"
+                    android:visibility="invisible"
+                    android:layout_gravity="center_horizontal"/>
+                <ImageView
+                    android:id="@+id/dessert_image_border"
+                    android:layout_width="@dimen/activity_image_border_side"
+                    android:layout_height="@dimen/activity_image_border_side"
+                    android:background="@color/red"
+                    android:visibility="invisible"
+                    android:layout_gravity="end"/>
+
+                <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginTop="@dimen/activity_image_border_width"
+                    android:layout_marginStart="@dimen/activity_image_border_width"
+                    android:layout_marginLeft="@dimen/activity_image_border_width"
+                    android:layout_marginEnd="@dimen/activity_image_border_width"
+                    android:layout_marginRight="@dimen/activity_image_border_width">
+
+                    <ImageButton
+                        android:id="@+id/starter_image"
+                        android:contentDescription="Starter"
+                        android:layout_width="@dimen/activity_image_side"
+                        android:layout_height="@dimen/activity_image_side"
+                        android:background="@color/red"
+                        android:layout_gravity="left"/>
+                    <TextView
+                        android:id="@+id/starter_title"
+                        android:layout_width="@dimen/activity_image_side"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_image_side"
+                        android:layout_gravity="left"
+                        android:gravity="center"
+                        android:textSize="@dimen/activity_small_text"
+                        android:text="Starter" />
+
+                    <ImageButton
+                        android:id="@+id/main_course_image"
+                        android:contentDescription="Main course"
+                        android:layout_width="@dimen/activity_image_side"
+                        android:layout_height="@dimen/activity_image_side"
+                        android:background="@color/red"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:id="@+id/main_course_title"
+                        android:layout_width="@dimen/activity_image_side"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_image_side"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:textSize="@dimen/activity_small_text"
+                        android:text="Main Course" />
+
+                    <ImageButton
+                        android:id="@+id/dessert_image"
+                        android:contentDescription="Dessert"
+                        android:layout_width="@dimen/activity_image_side"
+                        android:layout_height="@dimen/activity_image_side"
+                        android:layout_gravity="right"
+                        android:background="@color/red" />
+                    <TextView
+                        android:id="@+id/dessert_title"
+                        android:layout_width="@dimen/activity_image_side"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_image_side"
+                        android:layout_gravity="right"
+                        android:gravity="center"
+                        android:textSize="@dimen/activity_small_text"
+                        android:text="Dessert" />
+                    </FrameLayout>
+                </FrameLayout>
+            </FrameLayout>
+    </FrameLayout>
+
+
+    // Lower panel, with informative text of ingredients or instructions and number of guests (pers)
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="165dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1sp"
+            android:layout_marginRight="@dimen/activity_horizontal_margin"
+            android:layout_marginEnd="@dimen/activity_horizontal_margin"
+            android:layout_marginLeft="@dimen/activity_horizontal_margin"
+            android:layout_marginStart="@dimen/activity_horizontal_margin"
+            android:background="@color/black"/>
+
+        <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/pers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                android:layout_gravity="end|top"
+                android:textSize="@dimen/activity_medium_text"
+                android:text="0 pers" />
+
+            <TextView
+                android:id="@+id/information_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:keepScreenOn="true"
+                android:layout_gravity="start|top"
+                android:textSize="@dimen/activity_medium_text"
+                android:textStyle="bold"
+                android:text="Text" />
+            <TextView
+                android:id="@+id/information_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:keepScreenOn="true"
+                android:layout_gravity="start|top"
+                android:textSize="@dimen/activity_small_text"
+                android:text="Text" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</FrameLayout>

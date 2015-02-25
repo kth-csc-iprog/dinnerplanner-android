@@ -36,7 +36,10 @@ public class Dish {
 		this.type = type;
 	}
 	public String getImage() {
-		return image;
+        // Remove extension ".jpg"
+        int imageLength = image.length() - 4;
+        String imageNoExtension = image.substring(0, imageLength);
+		return imageNoExtension;
 	}
 	public void setImage(String image) {
 		this.image = image;
@@ -47,7 +50,13 @@ public class Dish {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
+    public float getPrice(){
+        float price = 0;
+        for(Ingredient ing: this.ingredients){
+            price += ing.getPrice();
+        }
+        return price;
+    }
 	public Set<Ingredient> getIngredients(){
 		return ingredients;
 	}

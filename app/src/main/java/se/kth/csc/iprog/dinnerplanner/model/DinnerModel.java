@@ -2,18 +2,21 @@ package se.kth.csc.iprog.dinnerplanner.model;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.Observable;
 
-public class DinnerModel {
-	
+public class DinnerModel extends Observable implements IDinnerModel {
+
+    //Step 2: number of guests
+    public int numGuests;
 
 	Set<Dish> dishes = new HashSet<Dish>();
-	
-	/**
-	 * TODO: For Lab2 you need to implement the IDinnerModel interface.
-	 * When you do this you will have all the needed fields and methods
-	 * for the dinner planner (number of guests, selected dishes, etc.). 
-	 */
-	
+    //Step 2: all selected dishes
+    Set<Dish> selectedDishes = new HashSet<Dish>();
+
+
+	public Dish toast;
+    public Dish meatballs;
+    public Dish icecream;
 	
 	/**
 	 * The constructor of the overall model. Set the default values here
@@ -33,6 +36,7 @@ public class DinnerModel {
 		dish1.addIngredient(dish1ing4);
 		dish1.addIngredient(dish1ing5);
 		dishes.add(dish1);
+        toast = dish1;
 		
 		Dish dish2 = new Dish("Meat balls",Dish.MAIN,"meatballs.jpg","Preheat an oven to 400 degrees F (200 degrees C). Place the beef into a mixing bowl, and season with salt, onion, garlic salt, Italian seasoning, oregano, red pepper flakes, hot pepper sauce, and Worcestershire sauce; mix well. Add the milk, Parmesan cheese, and bread crumbs. Mix until evenly blended, then form into 1 1/2-inch meatballs, and place onto a baking sheet. Bake in the preheated oven until no longer pink in the center, 20 to 25 minutes.");
 		Ingredient dish2ing1 = new Ingredient("extra lean ground beef",115,"g",20);
@@ -58,11 +62,25 @@ public class DinnerModel {
 		dish2.addIngredient(dish2ing10);
 		dish2.addIngredient(dish2ing11);
 		dishes.add(dish2);
-		
+        meatballs = dish2;
+
+        Dish dish3 = new Dish("Ice cream", Dish.DESERT,"icecream.jpg", "Scoop ice cream into bowl. Serve.");
+        Ingredient dish3ing1 = new Ingredient("cream", 20, "ml", 3);
+        Ingredient dish3ing2 = new Ingredient("salt", 10, "g", 2);
+        Ingredient dish3ing3 = new Ingredient("milk", 30, "ml", 3);
+        dish3.addIngredient(dish3ing1);
+        dish3.addIngredient(dish3ing2);
+        dish3.addIngredient(dish3ing3);
+
+        dishes.add(dish3);
+        icecream = dish3;
+
+        setNumberOfGuests(4);
+
 	}
 	
 	/**
-	 * Returns the set of dishes of specific type. (1 = starter, 2 = main, 3 = desert).
+	 * Returns the set of dishes.
 	 */
 	public Set<Dish> getDishes(){
 		return dishes;
@@ -94,7 +112,101 @@ public class DinnerModel {
 		}
 		return result;
 	}
-	
-	
+
+
+//STEP 2: Implementing IDinnerModel
+
+    public int getNumberOfGuests()
+    {
+        return this.numGuests;
+    };
+
+    public void setNumberOfGuests(int numberOfGuests)
+    {
+        this.numGuests = numberOfGuests;
+        setChanged();
+        notifyObservers(this.numGuests);
+    };
+
+    /**
+     * Selects dish and replaces any existing dish of that type
+     */
+    public void selectDish(Dish d)
+    {
+        selectedDishes.remove(getSelectedDish(d.type));
+        selectedDishes.add(d);
+
+        setChanged();
+        notifyObservers(d.type);
+    }
+    /**
+     * Returns the dish that is on the menu for selected type (1 = starter, 2 = main, 3 = desert).
+     */
+    public Dish getSelectedDish(int type)
+    {
+        for(Dish d : selectedDishes)
+        {
+            if(d.getType() == type)
+            {
+                return d;
+            }
+        }
+        return null;
+    };
+
+    /**
+     * Returns all the dishes on the menu.
+     */
+    public Set<Dish> getFullMenu()
+    {
+        return selectedDishes;
+    };
+
+    /**
+     * Returns all ingredients for all the dishes on the menu.
+     */
+    public Set<Ingredient> getAllIngredients()
+    {
+        Set<Ingredient> allIngredients = new HashSet<Ingredient>();
+        for (Dish d : selectedDishes)
+        {
+            allIngredients.addAll(d.getIngredients());
+        }
+        return allIngredients;
+    };
+
+    /**
+     * Returns the total price of the menu (all the ingredients multiplied by number of guests).
+     */
+    public float getTotalMenuPrice()
+    {
+        float totalPrice = 0f;
+        for (Ingredient i : getAllIngredients())
+        {
+            totalPrice += i.getPrice()*numGuests;
+        }
+        return totalPrice;
+    };
+
+    /**
+     * Adds the passed dish to the menu. If the dish of that type already exists on the menu
+     * it is removed from the menu and the new one added.
+     */
+    public void addDishToMenu(Dish dish)
+    {
+        selectedDishes.add(dish);
+        setChanged();
+        notifyObservers(selectedDishes);
+    };
+
+    /**
+     * Remove dish from menu
+     */
+    public void removeDishFromMenu(Dish dish)
+    {
+        selectedDishes.remove(dish);
+        setChanged();
+        notifyObservers(selectedDishes);
+    };
 
 }
