@@ -5,10 +5,12 @@ import se.kth.csc.iprog.dinnerplanner.android.view.FinalBack;
 import se.kth.csc.iprog.dinnerplanner.android.view.FinalCostAndPers;
 import se.kth.csc.iprog.dinnerplanner.android.view.FinalFoodImages;
 import se.kth.csc.iprog.dinnerplanner.android.view.FinalInformationText;
+import se.kth.csc.iprog.dinnerplanner.android.view.FinalPageController;
 import se.kth.csc.iprog.dinnerplanner.model.DinnerModel;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -32,7 +34,14 @@ public class PageFinal extends Activity {
         FinalInformationText finalInformationText = new FinalInformationText(findViewById(R.id.page_final_view_id), model);
         FinalBack finalBack = new FinalBack(findViewById(R.id.page_final_view_id));
 
+        FinalPageController finalPageController = new FinalPageController(model, finalFoodImages, finalInformationText);
+
     }
 
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, Activity2_MenuView.class);
+        startActivity(intent);
+        finish();
+    }
 
 }
