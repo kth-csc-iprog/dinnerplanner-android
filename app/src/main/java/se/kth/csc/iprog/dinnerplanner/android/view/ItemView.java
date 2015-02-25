@@ -39,7 +39,4 @@ public class ItemView extends LinearLayout {
 
     }
 
-    public void update(Observable o, Object changedItem) {
-
-    }
 }
